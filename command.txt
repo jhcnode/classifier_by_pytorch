@@ -1,0 +1,16 @@
+#현재 경로에서 커맨드창을 열고 activate torch 입력후 엔터 
+
+case1) 데이터 라벨링 파일 생성
+python to_label.py --dir=(데이터가 존재하는 경로)
+
+case2) 처음 학습시
+python main.py  --gpus=0  --batch_size=128 --subdivision=8  --model_name=ResNet50d --num_epochs=50 --data_dir=(라벨링 파일이 존재하는 경로)
+
+python main.py  --gpus=0  --batch_size=128 --subdivision=8  --model_name=ResNet50d --num_epochs=50 --data_dir=G:\kaeri
+
+case3) 재학습 시
+python main.py  --gpus=0  --batch_size=128 --subdivision=8  --model_name=ResNet50d --num_epochs=50 --data_dir=(./exp/라벨링 파일이 존재하는 경로) --load_model=./exp/cla/default/model_last.pth  --resume --resume_labels=True
+
+case4) 데모 실행시
+1) export 폴더에 학습하고 저장했던 *.pth를 model.pth로 바꾼 후 다음 명령어 실행 
+sdsdsd
